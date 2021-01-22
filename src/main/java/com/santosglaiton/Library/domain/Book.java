@@ -3,6 +3,7 @@ package com.santosglaiton.Library.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -12,14 +13,24 @@ public class Book implements Serializable {
     Integer id_book;
     String book_name;
     Boolean available;
+    Date begin;
 
     public Book() {
     }
 
-    public Book(Integer id_book, String book_name, Boolean available) {
+    public Book(Integer id_book, String book_name, Boolean available, Date begin) {
         this.id_book = id_book;
         this.book_name = book_name;
         this.available = available;
+        this.begin = begin;
+    }
+
+    public Date getBegin() {
+        return begin;
+    }
+
+    public void setBegin(Date begin) {
+        this.begin = begin;
     }
 
     public Integer getId_book() {
